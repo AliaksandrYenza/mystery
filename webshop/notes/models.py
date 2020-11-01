@@ -9,8 +9,14 @@ class Artiles(models.Model):
     description = models.TextField('full')
     date = models.DateTimeField('date')
 
+
     def __str__(self):
         return f'Note: {self.title}\n'
+
+
+    def get_absolute_url(self):
+        return f'/notes/{self.id}'
+
 
     class Meta:
         verbose_name = 'Note'

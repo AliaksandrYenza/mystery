@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Delete Page{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Form for creating notes</h1>
+        <form method="post">
+            {% csrf_token %}<br>
+            <button class="btn btn-success" type="submit">Delete</button>
+        </form>
+    </div>
+{% endblock %}

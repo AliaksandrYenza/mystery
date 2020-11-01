@@ -6,8 +6,6 @@ class ArticlesForm(ModelForm):
     class Meta:
         model = Artiles
         fields = ['title', 'intro', 'description', 'date']
-
-
         widgets = {
             'title': TextInput(attrs={
                 'class': 'form-control',
