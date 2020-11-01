@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>N.O.T.E.S.</h1>
+        {% if notes %}
+            {% for el in notes %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p> {{el.intro }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>U dont have any notes</p>
+        {% endif %}
+    </div>
+{% endblock %}
