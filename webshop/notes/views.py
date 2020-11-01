@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ArticlesForm
 from .models import Artiles
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 # Create your views here.
@@ -25,7 +25,7 @@ class NotesUpdateView(UpdateView):
     form_class = ArticlesForm
 
 
-class NotesDeleteView(DetailView):
+class NotesDeleteView(DeleteView):
     model = Artiles
     success_url = '/notes/'
     template_name = 'notes/notes_delete.html'

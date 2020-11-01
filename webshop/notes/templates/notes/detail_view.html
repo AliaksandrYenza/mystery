@@ -9,6 +9,7 @@
         <p>{{ artiles.description }}</p>
         <a href="{% url 'notes_delete' artiles.id %}" class="btn btn-danger">Delete</a>
         <a href="{% url 'notes_update' artiles.id %}" class="btn btn-danger">Update</a>
+        <a href="{% url 'notes_home' %}" class="btn btn-warning">Back</a>
 
     </div>
 {% endblock %}
