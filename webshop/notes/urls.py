@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include
 from . import views
 
@@ -20,8 +22,10 @@ from . import views
 urlpatterns = [
     path('', views.notes_home, name='notes_home'),
     path('create', views.create, name='create'),
-    path('<int:pk>', views.NotesDetailView.as_view(), name='notes_detail'), # track dynamic parameters <>
+    path('<int:pk>', views.NotesDetailView.as_view(), name='notes_detail'),
+                        # track dynamic parameters <>
                         # notes/1 , notes/2
     path('<int:pk>/update', views.NotesUpdateView.as_view(), name='notes_update'),
     path('<int:pk>/delete', views.NotesDeleteView.as_view(), name='notes_delete')
-]
+    #path('<int:pk>/file', views.NotesDetailView.as_view(), name='notes_detail')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
