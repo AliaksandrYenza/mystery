@@ -47,3 +47,15 @@ def create(request):
         'error': error_msg
     }
     return render(request, 'notes/create.html', data)
+
+def model_form_upload(request):
+    if request.method == 'POST':
+        form = ArticlesForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('detail_view')
+    else:
+        form = ArticlesForm()
+    return render(request, 'notes/model_form_upload.html', {
+        'form': form
+    })

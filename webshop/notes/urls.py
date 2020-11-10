@@ -26,6 +26,6 @@ urlpatterns = [
                         # track dynamic parameters <>
                         # notes/1 , notes/2
     path('<int:pk>/update', views.NotesUpdateView.as_view(), name='notes_update'),
-    path('<int:pk>/delete', views.NotesDeleteView.as_view(), name='notes_delete')
-    #path('<int:pk>/file', views.NotesDetailView.as_view(), name='notes_detail')
+    path('<int:pk>/delete', views.NotesDeleteView.as_view(), name='notes_delete'),
+    path('<int:pk>/model_form_upload', views.NotesDetailView.as_view(), name='model_form_upload')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

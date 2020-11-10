@@ -8,7 +8,9 @@ class Artiles(models.Model):
     intro = models.CharField('intro', max_length= 250)
     description = models.TextField('full')
     date = models.DateTimeField('date')
-    cover = models.ImageField(upload_to='images/')
+    # cover = models.ImageField(upload_to='images/')
+    document = models.FileField(upload_to='documents/%Y/%m/%d/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
 
 
     def __str__(self):

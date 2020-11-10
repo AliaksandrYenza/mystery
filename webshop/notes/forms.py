@@ -1,11 +1,12 @@
+
 from .models import Artiles
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
+from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, forms
 
 
 class ArticlesForm(ModelForm):
     class Meta:
         model = Artiles
-        fields = ['title', 'intro', 'description', 'date', 'cover']
+        fields = ['title', 'intro', 'description', 'date', 'document']
         widgets = {
             'title': TextInput(attrs={
                 'class': 'form-control',

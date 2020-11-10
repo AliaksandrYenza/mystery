@@ -7,9 +7,10 @@
         <h1> {{ artiles.title }}</h1>
         <p>{{ artiles.date }}</p>
         <p>{{ artiles.description }}</p>
+        <img src="{{ artiles.cover.url }}" alt="Пример" width="150" height="90"><br><br>
         <a href="{% url 'notes_delete' artiles.id %}" class="btn btn-danger">Delete</a>
         <a href="{% url 'notes_update' artiles.id %}" class="btn btn-danger">Update</a>
         <a href="{% url 'notes_home' %}" class="btn btn-warning">Back</a>
-        <img src="{{ artiles.cover.url }}" alt="Пример" width="150" height="90">
+        <a href="{% url 'model_form_upload' %}" class="btn btn-warning">Update file</a>
     </div>
 {% endblock %}
